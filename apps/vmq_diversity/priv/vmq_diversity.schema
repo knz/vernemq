@@ -40,6 +40,15 @@
   hidden
  ]}.
 
+{mapping, "vmq_diversity.auth_crdb.enabled", "vmq_diversity.auth_cache.crdb.enabled",
+ [{datatype, flag},
+  {default, off}]}.
+{mapping, "vmq_diversity.auth_crdb.script", "vmq_diversity.auth_cache.crdb.file", 
+ [{datatype, file},
+  {default, "{{platform_share_dir}}/lua/auth/crdb.lua"},
+  hidden
+ ]}.
+
 {mapping, "vmq_diversity.postgres.host", "vmq_diversity.db_config.postgres.host", 
  [{datatype, string},
   {default, "localhost"},

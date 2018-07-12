@@ -74,6 +74,10 @@
                           {enabled, false},
                           {file, "priv/auth/postgres.lua"}
                          ]},
+              {crdb, [
+                          {enabled, false},
+                          {file, "priv/auth/crdb.lua"}
+                         ]},
               {mysql, [
                           {enabled, false},
                           {file, "priv/auth/mysql.lua"}

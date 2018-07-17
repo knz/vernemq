@@ -65,13 +65,13 @@ require "auth/auth_commons"
 function auth_on_register(reg)
     if reg.username ~= nil and reg.password ~= nil then
         results = postgres.execute(pool, 
-            [[SELECT publish_acl::TEXT, subscribe_acl::TEXT 
+            [[SELECT publish_acl, subscribe_acl 
               FROM vmq_auth_acl
               WHERE 
                 mountpoint=$1 AND
                 client_id=$2 AND
                 username=$3 AND
-                password=sha256($4)
+                password=sha256($4:::TEXT)
             ]], 
             reg.mountpoint, 
             reg.client_id,
